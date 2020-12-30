@@ -42,7 +42,7 @@ namespace proyecto.Models
 					_Proveedores.cuenta = !rdr.IsDBNull(11) ? Convert.ToString(rdr["cuenta"].ToString()) : "";
 					_Proveedores.idtipoproveedor = !rdr.IsDBNull(12) ? Convert.ToInt16(rdr["idtipoproveedor"].ToString()) : (System.Int16)0;
 					_Proveedores.fechacreacion = !rdr.IsDBNull(14) ? Convert.ToDateTime(rdr["fechacreacion"].ToString()) : System.DateTime.Now;
-					_Proveedores.codaduana = !rdr.IsDBNull(15) ? Convert.ToString(rdr["codaduana"].ToString()) : "";
+					_Proveedores.codaduana = !rdr.IsDBNull(14) ? Convert.ToString(rdr["codaduana"].ToString()) : "";
 					lstProveedores.Add(_Proveedores);
 				}
 				Base.CerrarConexion(SqlCnn);
