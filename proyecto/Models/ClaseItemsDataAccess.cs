@@ -35,7 +35,7 @@ namespace proyecto.Models
 					_ClaseItems.cuentacosto = !rdr.IsDBNull(4) ? Convert.ToString(rdr["cuentacosto"].ToString()) : "";
 					_ClaseItems.cuentagasto = !rdr.IsDBNull(5) ? Convert.ToString(rdr["cuentagasto"].ToString()) : "";
 					_ClaseItems.cuentainventario = !rdr.IsDBNull(6) ? Convert.ToString(rdr["cuentainventario"].ToString()) : "";
-					_ClaseItems.ingresainventario = !rdr.IsDBNull(8) ? Convert.ToBoolean(rdr["ingresainventario"].ToString()) : true;
+					_ClaseItems.ingresainventario = !rdr.IsDBNull(6) ? Convert.ToBoolean(rdr["ingresainventario"].ToString()) : true;
 					lstClaseItems.Add(_ClaseItems);
 				}
 				Base.CerrarConexion(SqlCnn);
