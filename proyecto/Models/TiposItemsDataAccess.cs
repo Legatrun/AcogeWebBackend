@@ -31,7 +31,7 @@ namespace proyecto.Models
 					_TiposItems.idtipoitem = Convert.ToInt16(rdr["idtipoitem"].ToString());
 					_TiposItems.descripcion = !rdr.IsDBNull(1) ? Convert.ToString(rdr["descripcion"].ToString()) : "";
 					_TiposItems.sigla = !rdr.IsDBNull(2) ? Convert.ToString(rdr["sigla"].ToString()) : "";
-					_TiposItems.ingresainventario = !rdr.IsDBNull(4) ? Convert.ToBoolean(rdr["ingresainventario"].ToString()) : true;
+					_TiposItems.ingresainventario = !rdr.IsDBNull(2) ? Convert.ToBoolean(rdr["ingresainventario"].ToString()) : true;
 					lstTiposItems.Add(_TiposItems);
 				}
 				Base.CerrarConexion(SqlCnn);
