@@ -185,7 +185,13 @@
     <Compile Include="Controllers\ProveedoresController.cs" />
     <Compile Include="Controllers\SucursalesController.cs" />
     <Compile Include="Controllers\TipodePagosController.cs" />
+    <Compile Include="Controllers\TipoDocumentosIdentidadController.cs" />
+    <Compile Include="Controllers\TipoMovimientoInventarioController.cs" />
+    <Compile Include="Controllers\TiposClienteController.cs" />
+    <Compile Include="Controllers\TiposItemsController.cs" />
+    <Compile Include="Controllers\TiposProveedorController.cs" />
     <Compile Include="Controllers\UnidadDeManejoController.cs" />
+    <Compile Include="Controllers\ZonasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -230,8 +236,20 @@
     <Compile Include="Models\SucursalesDataAccess.cs" />
     <Compile Include="Models\TipodePagos.cs" />
     <Compile Include="Models\TipodePagosDataAccess.cs" />
+    <Compile Include="Models\TipoDocumentosIdentidad.cs" />
+    <Compile Include="Models\TipoDocumentosIdentidadDataAccess.cs" />
+    <Compile Include="Models\TipoMovimientoInventario.cs" />
+    <Compile Include="Models\TipoMovimientoInventarioDataAccess.cs" />
+    <Compile Include="Models\TiposCliente.cs" />
+    <Compile Include="Models\TiposClienteDataAccess.cs" />
+    <Compile Include="Models\TiposItems.cs" />
+    <Compile Include="Models\TiposItemsDataAccess.cs" />
+    <Compile Include="Models\TiposProveedor.cs" />
+    <Compile Include="Models\TiposProveedorDataAccess.cs" />
     <Compile Include="Models\UnidadDeManejo.cs" />
     <Compile Include="Models\UnidadDeManejoDataAccess.cs" />
+    <Compile Include="Models\Zonas.cs" />
+    <Compile Include="Models\ZonasDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
