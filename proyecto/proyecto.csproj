@@ -177,6 +177,7 @@
     <Compile Include="Controllers\CtasPresupController.cs" />
     <Compile Include="Controllers\CuentasBancosController.cs" />
     <Compile Include="Controllers\CuentasController.cs" />
+    <Compile Include="Controllers\EmpresaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Controllers\LineasController.cs" />
@@ -222,6 +223,8 @@
     <Compile Include="Models\CuentasBancos.cs" />
     <Compile Include="Models\CuentasBancosDataAccess.cs" />
     <Compile Include="Models\CuentasDataAccess.cs" />
+    <Compile Include="Models\Empresa.cs" />
+    <Compile Include="Models\EmpresaDataAccess.cs" />
     <Compile Include="Models\Items.cs" />
     <Compile Include="Models\ItemsDataAccess.cs" />
     <Compile Include="Models\Lineas.cs" />
@@ -282,13 +285,16 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
