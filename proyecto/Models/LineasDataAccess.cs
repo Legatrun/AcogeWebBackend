@@ -135,7 +135,7 @@ namespace proyecto.Models
 				SqlCmd.Parameters.AddWithValue("@cuenta", _Lineas.cuenta);
 
 				SqlCmd.ExecuteNonQuery();
-				_Lineas.idlinea = (System.Int16)pIDLinea.Value;
+				//_Lineas.idlinea = (System.Int16)pIDLinea.Value;
 				Base.CerrarConexion(SqlCnn);
 				_state.error = 0;
 				_state.descripcion = "Operacion Realizada";

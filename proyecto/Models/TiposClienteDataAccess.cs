@@ -132,7 +132,7 @@ namespace proyecto.Models
 				SqlCmd.Parameters.AddWithValue("@descripcion", _TiposCliente.descripcion);
 
 				SqlCmd.ExecuteNonQuery();
-				_TiposCliente.idtipocliente = (System.Int16)pIDTipoCliente.Value;
+				//_TiposCliente.idtipocliente = (System.Int16)pIDTipoCliente.Value;
 				Base.CerrarConexion(SqlCnn);
 				_state.error = 0;
 				_state.descripcion = "Operacion Realizada";

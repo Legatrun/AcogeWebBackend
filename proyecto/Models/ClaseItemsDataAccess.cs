@@ -150,7 +150,7 @@ namespace proyecto.Models
 				SqlCmd.Parameters.AddWithValue("@ingresainventario", _ClaseItems.ingresainventario);
 
 				SqlCmd.ExecuteNonQuery();
-				_ClaseItems.idclase = (System.Int16)pIDClase.Value;
+				//_ClaseItems.idclase = (System.Int16)pIDClase.Value;
 				Base.CerrarConexion(SqlCnn);
 				_state.error = 0;
 				_state.descripcion = "Operacion Realizada";

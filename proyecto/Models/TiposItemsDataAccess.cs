@@ -138,7 +138,7 @@ namespace proyecto.Models
 				SqlCmd.Parameters.AddWithValue("@ingresainventario", _TiposItems.ingresainventario);
 
 				SqlCmd.ExecuteNonQuery();
-				_TiposItems.idtipoitem = (System.Int16)pIDTipoItem.Value;
+				//_TiposItems.idtipoitem = (System.Int16)pIDTipoItem.Value;
 				Base.CerrarConexion(SqlCnn);
 				_state.error = 0;
 				_state.descripcion = "Operacion Realizada";

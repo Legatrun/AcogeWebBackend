@@ -138,7 +138,7 @@ namespace proyecto.Models
 				SqlCmd.Parameters.AddWithValue("@descripcion", _Zonas.descripcion);
 
 				SqlCmd.ExecuteNonQuery();
-				_Zonas.idzona = (System.Int16)pIDZona.Value;
+				//_Zonas.idzona = (System.Int16)pIDZona.Value;
 				Base.CerrarConexion(SqlCnn);
 				_state.error = 0;
 				_state.descripcion = "Operacion Realizada";

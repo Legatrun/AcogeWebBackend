@@ -135,7 +135,7 @@ namespace proyecto.Models
 				SqlCmd.Parameters.AddWithValue("@sigla", _TipoDocumentosIdentidad.sigla);
 
 				SqlCmd.ExecuteNonQuery();
-				_TipoDocumentosIdentidad.iddocumentoidentidad = (System.Int16)pIDDocumentoIdentidad.Value;
+				//_TipoDocumentosIdentidad.iddocumentoidentidad = (System.Int16)pIDDocumentoIdentidad.Value;
 				Base.CerrarConexion(SqlCnn);
 				_state.error = 0;
 				_state.descripcion = "Operacion Realizada";

@@ -35,7 +35,7 @@ namespace proyecto.Models
                 {
                     Autenticacion.Data _Autenticacion = new Autenticacion.Data();
                     _Autenticacion.Usuario = (System.String)rdr["Usuario"];
-                    _Autenticacion.FechaUltimoLogin = (System.DateTime)rdr["FechaUltimaSesionIniciada"]; 
+                    _Autenticacion.FechaUltimoLogin = (System.DateTime)rdr["FechaUltimaSesionIniciada"];
                     lstAutenticacion.Add(_Autenticacion);
                 }
                 Base.CerrarConexion(SqlCnn);
@@ -52,7 +52,7 @@ namespace proyecto.Models
                     {
                         _state.error = -1;
                         _state.descripcion = se.Message;
-                        _log.Error(_state.descripcion,_state.error.ToString());
+                        _log.Error(_state.descripcion, _state.error.ToString());
                     }
                     else
                     {
@@ -76,7 +76,16 @@ namespace proyecto.Models
             List<Autenticacion.Data> lstAutenticacion = new List<Autenticacion.Data>();
             try
             {
-                _log.Traceo("Inicia Sesión de Usuario "+ _crypto.DesencriptarValorFront(data.Usuario), "0");
+                _log.Traceo("Inicia Sesión de Usuario " + _crypto.DesencriptarValorFront(data.Usuario), "0");
+
+                Autenticacion objUsuarioVerificado = VerificarUsuario(data);
+                if (objUsuarioVerificado._error.error != 0)
+                {
+                    _state.error = objUsuarioVerificado._error.error;
+                    _state.descripcion = objUsuarioVerificado._error.descripcion;
+                    _log.Error(objUsuarioVerificado._error.descripcion, objUsuarioVerificado._error.error.ToString());
+                    return _state;
+                }
 
                 data.Dominio = _params.ActiveDirectoryServidor;
 
@@ -86,7 +95,7 @@ namespace proyecto.Models
                 {
                     var UsuarioEnPlano = _crypto.DesencriptarValorFront(data.Usuario);
                     var PasswordEnPlano = _crypto.DesencriptarValorFront(data.Password);
-                    RespAD = context.ValidateCredentials(UsuarioEnPlano,PasswordEnPlano); 
+                    RespAD = context.ValidateCredentials(UsuarioEnPlano, PasswordEnPlano);
                 }
 
                 if (RespAD == true)
@@ -95,7 +104,8 @@ namespace proyecto.Models
                     _state.descripcion = "Sesion Iniciada";
                     _log.Traceo("Sesión de Usuario " + data.Usuario + " iniciada", _state.error.ToString());
                 }
-                else {
+                else
+                {
                     _state.error = -4;
                     _state.descripcion = "Usuario Inexistente";
                     _log.Error(_state.descripcion, _state.error.ToString());
@@ -142,11 +152,11 @@ namespace proyecto.Models
                 SqlCmd.CommandType = CommandType.StoredProcedure;
                 SqlCmd.Parameters.AddWithValue("@usuario", _crypto.DesencriptarValorFront(data.Usuario));
                 SqlDataReader rdr = SqlCmd.ExecuteReader();
-               
+
                 Base.CerrarConexion(SqlCnn);
                 _state.error = 0;
                 _state.descripcion = "Sesion Finalizada";
-                _log.Traceo("Sesión de Usuario " + data.Usuario +" Finalizada"+ " iniciada", _state.error.ToString());
+                _log.Traceo("Sesión de Usuario " + data.Usuario + " Finalizada" + " iniciada", _state.error.ToString());
                 return _state;
             }
             catch (SqlException XcpSQL)
@@ -174,6 +184,58 @@ namespace proyecto.Models
                 _log.Error(_state.descripcion, _state.error.ToString());
             }
             return _state;
+        }
+
+        private Autenticacion VerificarUsuario(Autenticacion.Data data)
+        {
+            List<Autenticacion.Data> lstAutenticacion = new List<Autenticacion.Data>();
+            try
+            {
+                _log.Traceo("Verifica existencia de Usuario " + _crypto.DesencriptarValorFront(data.Usuario), "0");
+
+                SqlConnection SqlCnn;
+                SqlCnn = Base.AbrirConexion();
+                SqlCommand SqlCmd = new SqlCommand("Proc_Autenticacion_VerificaUsuario", SqlCnn);
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+                SqlCmd.Parameters.AddWithValue("@usuario", _crypto.DesencriptarValorFront(data.Usuario));
+                SqlDataReader rdr = SqlCmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    Autenticacion.Data _Autenticacion = new Autenticacion.Data();
+                    _Autenticacion.Usuario = (System.String)rdr["Usuario"];
+                    lstAutenticacion.Add(_Autenticacion);
+                }
+                Base.CerrarConexion(SqlCnn);
+                _state.error = 0;
+                _state.descripcion = "Usuario Existente";
+                _log.Traceo("Usuario Verificado: " + data.Usuario, _state.error.ToString());
+                return new Autenticacion(_state, lstAutenticacion);
+            }
+            catch (SqlException XcpSQL)
+            {
+                foreach (SqlError se in XcpSQL.Errors)
+                {
+                    if (se.Number <= 50000)
+                    {
+                        _state.error = -1;
+                        _state.descripcion = se.Message;
+                        _log.Error(_state.descripcion, _state.error.ToString());
+                    }
+                    else
+                    {
+                        _state.error = -2;
+                        _state.descripcion = "Error en Operacion de Consulta de Datos";
+                        _log.Error(_state.descripcion, _state.error.ToString());
+                    }
+                }
+            }
+            catch (Exception Ex)
+            {
+                _state.error = -3;
+                _state.descripcion = Ex.Message;
+                _log.Error(_state.descripcion, _state.error.ToString());
+            }
+            return new Autenticacion(_state);
         }
 
     }

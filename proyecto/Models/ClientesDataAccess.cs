@@ -108,7 +108,7 @@ namespace proyecto.Models
 					_Clientes.casillacorreo = !rdr.IsDBNull(12) ? Convert.ToString(rdr["casillacorreo"].ToString()) : "";
 					_Clientes.cuentacontable = !rdr.IsDBNull(13) ? Convert.ToString(rdr["cuentacontable"].ToString()) : "";
 					_Clientes.cuentacontableanticipos = !rdr.IsDBNull(14) ? Convert.ToString(rdr["cuentacontableanticipos"].ToString()) : "";
-					_Clientes.activo = !rdr.IsDBNull(16) ? Convert.ToBoolean(rdr["activo"].ToString()) : true;
+					_Clientes.activo = !rdr.IsDBNull(15) ? Convert.ToBoolean(rdr["activo"].ToString()) : true;
 					lstClientes.Add(_Clientes);
 				}
 				Base.CerrarConexion(SqlCnn);
