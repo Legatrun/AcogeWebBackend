@@ -141,7 +141,7 @@ namespace proyecto.Models
 				SqlCmd.Parameters.AddWithValue("@idmoneda", _Ciudades.idmoneda);
 
 				SqlCmd.ExecuteNonQuery();
-				_Ciudades.idciudad = (System.Int16)pIDCiudad.Value;
+				//_Ciudades.idciudad = (System.Int16)pIDCiudad.Value;
 				Base.CerrarConexion(SqlCnn);
 				_state.error = 0;
 				_state.descripcion = "Operacion Realizada";

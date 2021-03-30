@@ -138,7 +138,7 @@ namespace proyecto.Models
 				SqlCmd.Parameters.AddWithValue("@monedalocal", _Monedas.monedalocal);
 
 				SqlCmd.ExecuteNonQuery();
-				_Monedas.idmoneda = (System.Int16)pIDMoneda.Value;
+				//_Monedas.idmoneda = (System.Int16)pIDMoneda.Value;
 				Base.CerrarConexion(SqlCnn);
 				_state.error = 0;
 				_state.descripcion = "Operacion Realizada";

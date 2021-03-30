@@ -141,7 +141,7 @@ namespace proyecto.Models
 				SqlCmd.Parameters.AddWithValue("@idmoneda", _Cajas.idmoneda);
 
 				SqlCmd.ExecuteNonQuery();
-				_Cajas.idcaja = (System.Int16)pIDCaja.Value;
+				//_Cajas.idcaja = (System.Int16)pIDCaja.Value;
 				Base.CerrarConexion(SqlCnn);
 				_state.error = 0;
 				_state.descripcion = "Operacion Realizada";

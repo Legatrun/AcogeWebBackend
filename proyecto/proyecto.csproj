@@ -177,6 +177,7 @@
     <Compile Include="Controllers\CtasPresupController.cs" />
     <Compile Include="Controllers\CuentasBancosController.cs" />
     <Compile Include="Controllers\CuentasController.cs" />
+    <Compile Include="Controllers\EmpresaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Controllers\LineasController.cs" />
@@ -185,7 +186,13 @@
     <Compile Include="Controllers\ProveedoresController.cs" />
     <Compile Include="Controllers\SucursalesController.cs" />
     <Compile Include="Controllers\TipodePagosController.cs" />
+    <Compile Include="Controllers\TipoDocumentosIdentidadController.cs" />
+    <Compile Include="Controllers\TipoMovimientoInventarioController.cs" />
+    <Compile Include="Controllers\TiposClienteController.cs" />
+    <Compile Include="Controllers\TiposItemsController.cs" />
+    <Compile Include="Controllers\TiposProveedorController.cs" />
     <Compile Include="Controllers\UnidadDeManejoController.cs" />
+    <Compile Include="Controllers\ZonasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -216,6 +223,8 @@
     <Compile Include="Models\CuentasBancos.cs" />
     <Compile Include="Models\CuentasBancosDataAccess.cs" />
     <Compile Include="Models\CuentasDataAccess.cs" />
+    <Compile Include="Models\Empresa.cs" />
+    <Compile Include="Models\EmpresaDataAccess.cs" />
     <Compile Include="Models\Items.cs" />
     <Compile Include="Models\ItemsDataAccess.cs" />
     <Compile Include="Models\Lineas.cs" />
@@ -230,8 +239,20 @@
     <Compile Include="Models\SucursalesDataAccess.cs" />
     <Compile Include="Models\TipodePagos.cs" />
     <Compile Include="Models\TipodePagosDataAccess.cs" />
+    <Compile Include="Models\TipoDocumentosIdentidad.cs" />
+    <Compile Include="Models\TipoDocumentosIdentidadDataAccess.cs" />
+    <Compile Include="Models\TipoMovimientoInventario.cs" />
+    <Compile Include="Models\TipoMovimientoInventarioDataAccess.cs" />
+    <Compile Include="Models\TiposCliente.cs" />
+    <Compile Include="Models\TiposClienteDataAccess.cs" />
+    <Compile Include="Models\TiposItems.cs" />
+    <Compile Include="Models\TiposItemsDataAccess.cs" />
+    <Compile Include="Models\TiposProveedor.cs" />
+    <Compile Include="Models\TiposProveedorDataAccess.cs" />
     <Compile Include="Models\UnidadDeManejo.cs" />
     <Compile Include="Models\UnidadDeManejoDataAccess.cs" />
+    <Compile Include="Models\Zonas.cs" />
+    <Compile Include="Models\ZonasDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -264,13 +285,16 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

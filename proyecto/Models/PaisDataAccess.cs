@@ -135,7 +135,7 @@ namespace proyecto.Models
 				SqlCmd.Parameters.AddWithValue("@sigla", _Pais.sigla);
 
 				SqlCmd.ExecuteNonQuery();
-				_Pais.idpais = (System.Int16)pIDPais.Value;
+				//_Pais.idpais = (System.Int16)pIDPais.Value;
 				Base.CerrarConexion(SqlCnn);
 				_state.error = 0;
 				_state.descripcion = "Operacion Realizada";

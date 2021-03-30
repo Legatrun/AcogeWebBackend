@@ -132,7 +132,7 @@ namespace proyecto.Models
 				SqlCmd.Parameters.AddWithValue("@descripcion", _UnidadDeManejo.descripcion);
 
 				SqlCmd.ExecuteNonQuery();
-				_UnidadDeManejo.idunidadmanejo = (System.Int16)pIDUnidadManejo.Value;
+				//_UnidadDeManejo.idunidadmanejo = (System.Int16)pIDUnidadManejo.Value;
 				Base.CerrarConexion(SqlCnn);
 				_state.error = 0;
 				_state.descripcion = "Operacion Realizada";

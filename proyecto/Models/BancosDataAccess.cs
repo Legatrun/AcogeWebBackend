@@ -125,26 +125,26 @@ namespace proyecto.Models
 		}
 		public Bancos.State InsertarBancos(Bancos.Data _Bancos)
 		{
-			try
-			{
-		        _log.Traceo("Ingresa a Metodo Insertar Bancos", "0");
-				SqlConnection SqlCnn;
-				SqlCnn = Base.AbrirConexion();
-				SqlCommand SqlCmd = new SqlCommand("Proc_Bancos_Insert", SqlCnn);
-				SqlCmd.CommandType = CommandType.StoredProcedure;
-				SqlParameter pIDBanco = new SqlParameter();
-				pIDBanco.ParameterName = "@IDBanco";
-				pIDBanco.Value = 0;
-				SqlCmd.Parameters.Add(pIDBanco);
-				pIDBanco.Direction = System.Data.ParameterDirection.Output;
-				SqlCmd.Parameters.AddWithValue("@nit", _Bancos.nit);
-				SqlCmd.Parameters.AddWithValue("@descripcion", _Bancos.descripcion);
-				SqlCmd.Parameters.AddWithValue("@bancopropio", _Bancos.bancopropio);
-				SqlCmd.Parameters.AddWithValue("@idpais", _Bancos.idpais);
-				SqlCmd.Parameters.AddWithValue("@idciudad", _Bancos.idciudad);
+            try
+            {
+                _log.Traceo("Ingresa a Metodo Insertar Bancos", "0");
+                SqlConnection SqlCnn;
+                SqlCnn = Base.AbrirConexion();
+                SqlCommand SqlCmd = new SqlCommand("Proc_Bancos_Insert", SqlCnn);
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+                SqlParameter pIDBanco = new SqlParameter();
+                pIDBanco.ParameterName = "@IDBanco";
+                pIDBanco.Value = 0;
+                SqlCmd.Parameters.Add(pIDBanco);
+                pIDBanco.Direction = System.Data.ParameterDirection.Output;
+                SqlCmd.Parameters.AddWithValue("@nit", _Bancos.nit);
+                SqlCmd.Parameters.AddWithValue("@descripcion", _Bancos.descripcion);
+                SqlCmd.Parameters.AddWithValue("@bancopropio", _Bancos.bancopropio);
+                SqlCmd.Parameters.AddWithValue("@idpais", _Bancos.idpais);
+                SqlCmd.Parameters.AddWithValue("@idciudad", _Bancos.idciudad);
 
-				SqlCmd.ExecuteNonQuery();
-				_Bancos.idbanco = (System.Int16)pIDBanco.Value;
+                SqlCmd.ExecuteNonQuery();
+                //_Bancos.idbanco = (System.Int16)pIDBanco.Value;
 				Base.CerrarConexion(SqlCnn);
 				_state.error = 0;
 				_state.descripcion = "Operacion Realizada";

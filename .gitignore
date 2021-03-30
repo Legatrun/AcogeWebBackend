@@ -3,7 +3,6 @@
 Thumbs.db
 #Ignore files built by Visual Studio
 *.obj
-*.exe
 *.pdb
 *.user
 *.aps
@@ -19,8 +18,7 @@ Thumbs.db
 *.cache
 *.ilk
 *.log
-bin
-!bin/roslyn/
+proyecto/bin/es/
 proyecto/bin/proyecto.dll
 proyecto/bin/proyecto.dll.config
 [Dd]ebug*/
@@ -33,4 +31,37 @@ _ReSharper*/
 .vs/
 #Nuget packages folder
 packages/
+
+/proyecto/bin/WebGrease.dll
+/proyecto/bin/System.Web.WebPages.xml
+/proyecto/bin/System.Web.WebPages.Razor.xml
+/proyecto/bin/System.Web.WebPages.Razor.dll
+/proyecto/bin/System.Web.WebPages.dll
+/proyecto/bin/System.Web.WebPages.Deployment.xml
+/proyecto/bin/System.Web.WebPages.Deployment.dll
+/proyecto/bin/System.Web.Razor.xml
+/proyecto/bin/System.Web.Razor.dll
+/proyecto/bin/System.Web.Optimization.xml
+/proyecto/bin/System.Web.Optimization.dll
+/proyecto/bin/System.Web.Mvc.xml
+/proyecto/bin/System.Web.Mvc.dll
+/proyecto/bin/System.Web.Http.xml
+/proyecto/bin/System.Web.Http.WebHost.xml
+/proyecto/bin/System.Web.Http.WebHost.dll
+/proyecto/bin/System.Web.Http.dll
+/proyecto/bin/System.Web.Http.Cors.xml
+/proyecto/bin/System.Web.Http.Cors.dll
+/proyecto/bin/System.Web.Helpers.xml
+/proyecto/bin/System.Web.Helpers.dll
+/proyecto/bin/System.Web.Cors.dll
+/proyecto/bin/System.Net.Http.Formatting.xml
+/proyecto/bin/System.Net.Http.Formatting.dll
+/proyecto/bin/Newtonsoft.Json.xml
+/proyecto/bin/Newtonsoft.Json.dll
+/proyecto/bin/Microsoft.Web.Infrastructure.dll
+/proyecto/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+/proyecto/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+/proyecto/bin/Antlr3.Runtime.dll
+
+packages.zip
 
