@@ -168,12 +168,15 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AlmacenesController.cs" />
     <Compile Include="Controllers\AperturayCierreGestionController.cs" />
+    <Compile Include="Controllers\AsientosDetalleController.cs" />
+    <Compile Include="Controllers\AsientosEncabezadoController.cs" />
     <Compile Include="Controllers\AutenticacionController.cs" />
     <Compile Include="Controllers\BancosController.cs" />
     <Compile Include="Controllers\CajasController.cs" />
     <Compile Include="Controllers\CiudadesController.cs" />
     <Compile Include="Controllers\ClaseItemsController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\CorrelativosTiposComprobantesController.cs" />
     <Compile Include="Controllers\CtasPresupController.cs" />
     <Compile Include="Controllers\CuentasBancosController.cs" />
     <Compile Include="Controllers\CuentasController.cs" />
@@ -189,6 +192,8 @@
     <Compile Include="Controllers\TipoDocumentosIdentidadController.cs" />
     <Compile Include="Controllers\TipoMovimientoInventarioController.cs" />
     <Compile Include="Controllers\TiposClienteController.cs" />
+    <Compile Include="Controllers\TiposComprobantesController.cs" />
+    <Compile Include="Controllers\TiposdeCambioController.cs" />
     <Compile Include="Controllers\TiposItemsController.cs" />
     <Compile Include="Controllers\TiposProveedorController.cs" />
     <Compile Include="Controllers\UnidadDeManejoController.cs" />
@@ -204,6 +209,10 @@
     <Compile Include="Models\AlmacenesDataAccess.cs" />
     <Compile Include="Models\AperturayCierreGestion.cs" />
     <Compile Include="Models\AperturayCierreGestionDataAccess.cs" />
+    <Compile Include="Models\AsientosDetalle.cs" />
+    <Compile Include="Models\AsientosDetalleDataAccess.cs" />
+    <Compile Include="Models\AsientosEncabezado.cs" />
+    <Compile Include="Models\AsientosEncabezadoDataAccess.cs" />
     <Compile Include="Models\Autenticacion.cs" />
     <Compile Include="Models\AutenticacionDataAccess.cs" />
     <Compile Include="Models\Bancos.cs" />
@@ -217,6 +226,8 @@
     <Compile Include="Models\Clientes.cs" />
     <Compile Include="Models\ClientesDataAccess.cs" />
     <Compile Include="Models\Conexion.cs" />
+    <Compile Include="Models\CorrelativosTiposComprobantes.cs" />
+    <Compile Include="Models\CorrelativosTiposComprobantesDataAccess.cs" />
     <Compile Include="Models\CtasPresup.cs" />
     <Compile Include="Models\CtasPresupDataAccess.cs" />
     <Compile Include="Models\Cuentas.cs" />
@@ -245,6 +256,10 @@
     <Compile Include="Models\TipoMovimientoInventarioDataAccess.cs" />
     <Compile Include="Models\TiposCliente.cs" />
     <Compile Include="Models\TiposClienteDataAccess.cs" />
+    <Compile Include="Models\TiposComprobantes.cs" />
+    <Compile Include="Models\TiposComprobantesDataAccess.cs" />
+    <Compile Include="Models\TiposdeCambio.cs" />
+    <Compile Include="Models\TiposdeCambioDataAccess.cs" />
     <Compile Include="Models\TiposItems.cs" />
     <Compile Include="Models\TiposItemsDataAccess.cs" />
     <Compile Include="Models\TiposProveedor.cs" />
