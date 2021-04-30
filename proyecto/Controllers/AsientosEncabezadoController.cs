@@ -13,7 +13,7 @@ namespace proyecto.Controllers
 	public class AsientosEncabezadoController: ApiController
 	{
 		AsientosEncabezadoDataAccess objAsientosEncabezado = new AsientosEncabezadoDataAccess();
-
+        
        [HttpPost]
        [Route("Consultar")]
 		public AsientosEncabezado Consultar()
