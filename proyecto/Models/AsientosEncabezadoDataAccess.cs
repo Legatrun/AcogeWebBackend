@@ -126,56 +126,106 @@ namespace proyecto.Models
 			}
 			return new AsientosEncabezado(_state);
 		}
-		public AsientosEncabezado.State InsertarAsientosEncabezado(AsientosEncabezado.Data _AsientosEncabezado)
-		{
-			try
-			{
-		        _log.Traceo("Ingresa a Metodo Insertar AsientosEncabezado", "0");
-				SqlConnection SqlCnn;
-				SqlCnn = Base.AbrirConexion();
-				SqlCommand SqlCmd = new SqlCommand("Proc_AsientosEncabezado_Insert", SqlCnn);
-				SqlCmd.CommandType = CommandType.StoredProcedure;
-				SqlCmd.Parameters.AddWithValue("@idtipocomprobante", _AsientosEncabezado.idtipocomprobante);
-				SqlCmd.Parameters.AddWithValue("@numerocomprobante", _AsientosEncabezado.numerocomprobante);
-				SqlCmd.Parameters.AddWithValue("@fecha", _AsientosEncabezado.fecha);
-				SqlCmd.Parameters.AddWithValue("@referencia", _AsientosEncabezado.referencia);
-				SqlCmd.Parameters.AddWithValue("@glosa", _AsientosEncabezado.glosa);
-				SqlCmd.Parameters.AddWithValue("@cotizacion", _AsientosEncabezado.cotizacion);
-				SqlCmd.Parameters.AddWithValue("@codigomodulo", _AsientosEncabezado.codigomodulo);
+        //original generaddo
+        //public AsientosEncabezado.State InsertarAsientosEncabezado(AsientosEncabezado.Data _AsientosEncabezado)
+        //{
+        //	try
+        //	{
+        //        _log.Traceo("Ingresa a Metodo Insertar AsientosEncabezado", "0");
+        //		SqlConnection SqlCnn;
+        //		SqlCnn = Base.AbrirConexion();
+        //		SqlCommand SqlCmd = new SqlCommand("Proc_AsientosEncabezado_Insert", SqlCnn);
+        //		SqlCmd.CommandType = CommandType.StoredProcedure;
+        //		SqlCmd.Parameters.AddWithValue("@idtipocomprobante", _AsientosEncabezado.idtipocomprobante);
+        //		SqlCmd.Parameters.AddWithValue("@numerocomprobante", _AsientosEncabezado.numerocomprobante);
+        //		SqlCmd.Parameters.AddWithValue("@fecha", _AsientosEncabezado.fecha);
+        //		SqlCmd.Parameters.AddWithValue("@referencia", _AsientosEncabezado.referencia);
+        //		SqlCmd.Parameters.AddWithValue("@glosa", _AsientosEncabezado.glosa);
+        //		SqlCmd.Parameters.AddWithValue("@cotizacion", _AsientosEncabezado.cotizacion);
+        //		SqlCmd.Parameters.AddWithValue("@codigomodulo", _AsientosEncabezado.codigomodulo);
 
-				SqlCmd.ExecuteNonQuery();
-				Base.CerrarConexion(SqlCnn);
-				_state.error = 0;
-				_state.descripcion = "Operacion Realizada";
-				_log.Traceo(_state.descripcion + " Operacion Insertar AsientosEncabezado", _state.error.ToString());
-			}
-			catch (SqlException XcpSQL)
-			{
-				foreach (SqlError se in XcpSQL.Errors)
-				{
-					if (se.Number <= 50000)
-					{
-						_state.error = -1;
-						_state.descripcion = se.Message;
-						_log.Error(_state.descripcion, _state.error.ToString());
-					}
-					else
-					{
-						_state.error = -2;
-						_state.descripcion = "Error en Operacion de Insertar de Datos";
-						_log.Error(_state.descripcion, _state.error.ToString());
-					}
-				}
-			}
-			catch (Exception Ex)
-			{
-				_state.error = -3;
-				_state.descripcion = Ex.Message;
-				_log.Error(_state.descripcion, _state.error.ToString());
-			}
-			return _state;
-		}
-		public AsientosEncabezado.State ActualizarAsientosEncabezado(AsientosEncabezado.Data _AsientosEncabezado)
+        //		SqlCmd.ExecuteNonQuery();
+        //		Base.CerrarConexion(SqlCnn);
+        //		_state.error = 0;
+        //		_state.descripcion = "Operacion Realizada";
+        //		_log.Traceo(_state.descripcion + " Operacion Insertar AsientosEncabezado", _state.error.ToString());
+        //	}
+        //	catch (SqlException XcpSQL)
+        //	{
+        //		foreach (SqlError se in XcpSQL.Errors)
+        //		{
+        //			if (se.Number <= 50000)
+        //			{
+        //				_state.error = -1;
+        //				_state.descripcion = se.Message;
+        //				_log.Error(_state.descripcion, _state.error.ToString());
+        //			}
+        //			else
+        //			{
+        //				_state.error = -2;
+        //				_state.descripcion = "Error en Operacion de Insertar de Datos";
+        //				_log.Error(_state.descripcion, _state.error.ToString());
+        //			}
+        //		}
+        //	}
+        //	catch (Exception Ex)
+        //	{
+        //		_state.error = -3;
+        //		_state.descripcion = Ex.Message;
+        //		_log.Error(_state.descripcion, _state.error.ToString());
+        //	}
+        //	return _state;
+        //}
+        public AsientosEncabezado.State InsertarAsientosEncabezado(AsientosEncabezado.Data _AsientosEncabezado)
+        {
+            try
+            {
+                _log.Traceo("Ingresa a Metodo Insertar AsientosEncabezado", "0");
+                SqlConnection SqlCnn;
+                SqlCnn = Base.AbrirConexion();
+                SqlCommand SqlCmd = new SqlCommand("proc_AsientosEncabezado_INS", SqlCnn);
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+                SqlCmd.Parameters.AddWithValue("@idtipocomprobante", _AsientosEncabezado.idtipocomprobante);
+                SqlCmd.Parameters.AddWithValue("@numerocomprobante", _AsientosEncabezado.numerocomprobante);
+                SqlCmd.Parameters.AddWithValue("@fecha", _AsientosEncabezado.fecha);
+                SqlCmd.Parameters.AddWithValue("@referencia", _AsientosEncabezado.referencia);
+                SqlCmd.Parameters.AddWithValue("@glosa", _AsientosEncabezado.glosa);
+                SqlCmd.Parameters.AddWithValue("@cotizacion", _AsientosEncabezado.cotizacion);
+                SqlCmd.Parameters.AddWithValue("@codigomodulo", _AsientosEncabezado.codigomodulo);
+
+                SqlCmd.ExecuteNonQuery();
+                Base.CerrarConexion(SqlCnn);
+                _state.error = 0;
+                _state.descripcion = "Operacion Realizada";
+                _log.Traceo(_state.descripcion + " Operacion Insertar AsientosEncabezado", _state.error.ToString());
+            }
+            catch (SqlException XcpSQL)
+            {
+                foreach (SqlError se in XcpSQL.Errors)
+                {
+                    if (se.Number <= 50000)
+                    {
+                        _state.error = -1;
+                        _state.descripcion = se.Message;
+                        _log.Error(_state.descripcion, _state.error.ToString());
+                    }
+                    else
+                    {
+                        _state.error = -2;
+                        _state.descripcion = "Error en Operacion de Insertar de Datos";
+                        _log.Error(_state.descripcion, _state.error.ToString());
+                    }
+                }
+            }
+            catch (Exception Ex)
+            {
+                _state.error = -3;
+                _state.descripcion = Ex.Message;
+                _log.Error(_state.descripcion, _state.error.ToString());
+            }
+            return _state;
+        }
+        public AsientosEncabezado.State ActualizarAsientosEncabezado(AsientosEncabezado.Data _AsientosEncabezado)
 		{
 			try
 			{
