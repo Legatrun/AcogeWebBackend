@@ -30,7 +30,7 @@ namespace proyecto.Models
 					ClaseItems.Data _ClaseItems= new ClaseItems.Data();
 					_ClaseItems.idclase = Convert.ToInt16(rdr["idclase"].ToString());
 					_ClaseItems.descripcion = !rdr.IsDBNull(1) ? Convert.ToString(rdr["descripcion"].ToString()) : "";
-					_ClaseItems.sigla = !rdr.IsDBNull(2) ? Convert.ToString(rdr["sigla"].ToString()) : "";
+					_ClaseItems.sigla = !rdr.IsDBNull(2) ? Convert.ToString(rdr["sigla"].ToString().Trim()) : "";
 					_ClaseItems.cuentaventa = !rdr.IsDBNull(3) ? Convert.ToString(rdr["cuentaventa"].ToString()) : "";
 					_ClaseItems.cuentacosto = !rdr.IsDBNull(4) ? Convert.ToString(rdr["cuentacosto"].ToString()) : "";
 					_ClaseItems.cuentagasto = !rdr.IsDBNull(5) ? Convert.ToString(rdr["cuentagasto"].ToString()) : "";

@@ -30,7 +30,7 @@ namespace proyecto.Models
 					Cajas.Data _Cajas= new Cajas.Data();
 					_Cajas.idcaja = Convert.ToInt16(rdr["idcaja"].ToString());
 					_Cajas.descripcion = !rdr.IsDBNull(1) ? Convert.ToString(rdr["descripcion"].ToString()) : "";
-					_Cajas.cuenta = !rdr.IsDBNull(2) ? Convert.ToString(rdr["cuenta"].ToString()) : "";
+					_Cajas.cuenta = !rdr.IsDBNull(2) ? Convert.ToString(rdr["cuenta"].ToString().Trim()) : "";
 					_Cajas.monto = !rdr.IsDBNull(3) ? Convert.ToDouble(rdr["monto"].ToString()) : (System.Double)0;
 					_Cajas.idmoneda = !rdr.IsDBNull(4) ? Convert.ToInt16(rdr["idmoneda"].ToString()) : (System.Int16)0;
 					lstCajas.Add(_Cajas);
