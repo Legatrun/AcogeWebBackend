@@ -33,8 +33,8 @@ namespace proyecto.Models
 					_empleado.materno = !rdr.IsDBNull(2) ? Convert.ToString(rdr["materno"].ToString()) : "";
 					_empleado.nombres = Convert.ToString(rdr["nombres"].ToString());
 					_empleado.fecha_nac = Convert.ToDateTime(rdr["fecha_nac"].ToString());
-					_empleado.identificacion = Convert.ToString(rdr["identificacion"].ToString());
-					_empleado.cod_asegurado = !rdr.IsDBNull(6) ? Convert.ToString(rdr["cod_asegurado"].ToString()) : "";
+					_empleado.identificacion = Convert.ToString(rdr["identificacion"].ToString()).Trim();
+					_empleado.cod_asegurado = !rdr.IsDBNull(6) ? Convert.ToString(rdr["cod_asegurado"].ToString()).Trim() : "";
 					_empleado.direccion = !rdr.IsDBNull(7) ? Convert.ToString(rdr["direccion"].ToString()) : "";
 					_empleado.email = !rdr.IsDBNull(8) ? Convert.ToString(rdr["email"].ToString()) : "";
 					_empleado.telefono = !rdr.IsDBNull(9) ? Convert.ToString(rdr["telefono"].ToString()) : "";

@@ -29,7 +29,7 @@ namespace proyecto.Models
 				{
 					TiposProveedor.Data _TiposProveedor= new TiposProveedor.Data();
 					_TiposProveedor.idtipoproveedor = Convert.ToInt16(rdr["idtipoproveedor"].ToString());
-					_TiposProveedor.descripcion = !rdr.IsDBNull(1) ? Convert.ToString(rdr["descripcion"].ToString()) : "";
+					_TiposProveedor.descripcion = !rdr.IsDBNull(1) ? Convert.ToString(rdr["descripcion"].ToString()).Trim() : "";
 					lstTiposProveedor.Add(_TiposProveedor);
 				}
 				Base.CerrarConexion(SqlCnn);

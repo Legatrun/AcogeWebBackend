@@ -29,7 +29,7 @@ namespace proyecto.Models
 				{
 					UnidadDeManejo.Data _UnidadDeManejo= new UnidadDeManejo.Data();
 					_UnidadDeManejo.idunidadmanejo = Convert.ToInt16(rdr["idunidadmanejo"].ToString());
-					_UnidadDeManejo.descripcion = !rdr.IsDBNull(1) ? Convert.ToString(rdr["descripcion"].ToString()) : "";
+					_UnidadDeManejo.descripcion = !rdr.IsDBNull(1) ? Convert.ToString(rdr["descripcion"].ToString()).Trim() : "";
 					lstUnidadDeManejo.Add(_UnidadDeManejo);
 				}
 				Base.CerrarConexion(SqlCnn);

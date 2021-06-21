@@ -30,7 +30,7 @@ namespace proyecto.Models
 					Proveedores.Data _Proveedores= new Proveedores.Data();
 					_Proveedores.codigoproveedor = Convert.ToString(rdr["codigoproveedor"].ToString());
 					_Proveedores.iddocumentoidentidad = !rdr.IsDBNull(1) ? Convert.ToInt16(rdr["iddocumentoidentidad"].ToString()) : (System.Int16)0;
-					_Proveedores.numerodocumento = !rdr.IsDBNull(2) ? Convert.ToString(rdr["numerodocumento"].ToString()) : "";
+					_Proveedores.numerodocumento = !rdr.IsDBNull(2) ? Convert.ToString(rdr["numerodocumento"].ToString()).Trim() : "";
 					_Proveedores.razonsocial = !rdr.IsDBNull(3) ? Convert.ToString(rdr["razonsocial"].ToString()) : "";
 					_Proveedores.direccion = !rdr.IsDBNull(4) ? Convert.ToString(rdr["direccion"].ToString()) : "";
 					_Proveedores.idpais = !rdr.IsDBNull(5) ? Convert.ToInt16(rdr["idpais"].ToString()) : (System.Int16)0;
@@ -39,10 +39,10 @@ namespace proyecto.Models
 					_Proveedores.contacto = !rdr.IsDBNull(8) ? Convert.ToString(rdr["contacto"].ToString()) : "";
 					_Proveedores.telefonos = !rdr.IsDBNull(9) ? Convert.ToString(rdr["telefonos"].ToString()) : "";
 					_Proveedores.fax = !rdr.IsDBNull(10) ? Convert.ToString(rdr["fax"].ToString()) : "";
-					_Proveedores.cuenta = !rdr.IsDBNull(11) ? Convert.ToString(rdr["cuenta"].ToString()) : "";
+					_Proveedores.cuenta = !rdr.IsDBNull(11) ? Convert.ToString(rdr["cuenta"].ToString()).Trim() : "";
 					_Proveedores.idtipoproveedor = !rdr.IsDBNull(12) ? Convert.ToInt16(rdr["idtipoproveedor"].ToString()) : (System.Int16)0;
 					_Proveedores.fechacreacion = !rdr.IsDBNull(14) ? Convert.ToDateTime(rdr["fechacreacion"].ToString()) : System.DateTime.Now;
-					_Proveedores.codaduana = !rdr.IsDBNull(14) ? Convert.ToString(rdr["codaduana"].ToString()) : "";
+					_Proveedores.codaduana = !rdr.IsDBNull(14) ? Convert.ToString(rdr["codaduana"].ToString()).Trim() : "";
 					lstProveedores.Add(_Proveedores);
 				}
 				Base.CerrarConexion(SqlCnn);

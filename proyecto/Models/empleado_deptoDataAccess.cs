@@ -39,8 +39,8 @@ namespace proyecto.Models
 					_empleado_depto.tipoempleado = Convert.ToInt32(rdr["tipoempleado"].ToString());
 					_empleado_depto.planilla = Convert.ToInt32(rdr["planilla"].ToString());
 					_empleado_depto.jerarquia = Convert.ToInt32(rdr["jerarquia"].ToString());
-					_empleado_depto.cuenta = !rdr.IsDBNull(11) ?  Convert.ToString(rdr["cuenta"].ToString()) : "";
-					_empleado_depto.oficina = Convert.ToString(rdr["oficina"].ToString());
+					_empleado_depto.cuenta = !rdr.IsDBNull(11) ?  Convert.ToString(rdr["cuenta"].ToString()).Trim() : "";
+					_empleado_depto.oficina = Convert.ToString(rdr["oficina"].ToString()).Trim();
 					_empleado_depto.estado = Convert.ToBoolean(rdr["estado"].ToString());
 					_empleado_depto.saldo_anterior_iva = !rdr.IsDBNull(14) ?  Convert.ToDouble(rdr["saldo_anterior_iva"].ToString()) : (System.Double)0;
 					_empleado_depto.envio_email = Convert.ToBoolean(rdr["envio_email"].ToString());
