@@ -22,7 +22,7 @@ namespace proyecto.Models
 		}
 		public class Data
 		{
-			public System.Int16 idtipocomprobante{ get; set; }
+			public System.Int32 idtipocomprobante{ get; set; }
 			public System.String descripcion{ get; set; }
 			public System.String sigla{ get; set; }
 			public System.Boolean automatico{ get; set; }

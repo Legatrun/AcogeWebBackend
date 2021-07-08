@@ -29,12 +29,16 @@ namespace proyecto.Controllers
 
        [HttpPost]
        [Route("Insertar")]
-		public TiposComprobantes.State Insertar([FromBody] TiposComprobantes.Data data)
-		{
-			return objTiposComprobantes.InsertarTiposComprobantes(data);
-		}
+        //public TiposComprobantes.State Insertar([FromBody] TiposComprobantes.Data data)
+        //{
+        //	return objTiposComprobantes.InsertarTiposComprobantes(data);
+        //}
+        public TiposComprobantes Insertar([FromBody] TiposComprobantes.Data data)
+        {
+            return objTiposComprobantes.InsertarTiposComprobantes(data);
+        }
 
-       [HttpPut]
+        [HttpPut]
        [Route("Actualizar")]
 		public TiposComprobantes.State Actualizar([FromBody] TiposComprobantes.Data data)
 		{
