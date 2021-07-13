@@ -121,59 +121,121 @@ namespace proyecto.Models
 			}
 			return new TiposComprobantes(_state);
 		}
-		public TiposComprobantes.State InsertarTiposComprobantes(TiposComprobantes.Data _TiposComprobantes)
-		{
-			try
-			{
-		        _log.Traceo("Ingresa a Metodo Insertar TiposComprobantes", "0");
-				SqlConnection SqlCnn;
-				SqlCnn = Base.AbrirConexion();
-				SqlCommand SqlCmd = new SqlCommand("Proc_TiposComprobantes_Insert", SqlCnn);
-				SqlCmd.CommandType = CommandType.StoredProcedure;
-				SqlParameter pIDTipoComprobante = new SqlParameter();
-				pIDTipoComprobante.ParameterName = "@IDTipoComprobante";
-				pIDTipoComprobante.Value = 0;
-				SqlCmd.Parameters.Add(pIDTipoComprobante);
-				pIDTipoComprobante.Direction = System.Data.ParameterDirection.Output;
-				SqlCmd.Parameters.AddWithValue("@descripcion", _TiposComprobantes.descripcion);
-				SqlCmd.Parameters.AddWithValue("@sigla", _TiposComprobantes.sigla);
-				SqlCmd.Parameters.AddWithValue("@automatico", _TiposComprobantes.automatico);
-				SqlCmd.Parameters.AddWithValue("@idsucursal", _TiposComprobantes.idsucursal);
+        //public TiposComprobantes.State InsertarTiposComprobantes(TiposComprobantes.Data _TiposComprobantes)
+        //{
+        //	try
+        //	{
+        //        _log.Traceo("Ingresa a Metodo Insertar TiposComprobantes", "0");
+        //		SqlConnection SqlCnn;
+        //		SqlCnn = Base.AbrirConexion();
+        //		SqlCommand SqlCmd = new SqlCommand("Proc_TiposComprobantes_Insert", SqlCnn);
+        //		SqlCmd.CommandType = CommandType.StoredProcedure;
+        //		SqlParameter pIDTipoComprobante = new SqlParameter();
+        //		pIDTipoComprobante.ParameterName = "@IDTipoComprobante";
+        //		pIDTipoComprobante.Value = 0;
+        //		SqlCmd.Parameters.Add(pIDTipoComprobante);
+        //		pIDTipoComprobante.Direction = System.Data.ParameterDirection.Output;
+        //		SqlCmd.Parameters.AddWithValue("@descripcion", _TiposComprobantes.descripcion);
+        //		SqlCmd.Parameters.AddWithValue("@sigla", _TiposComprobantes.sigla);
+        //		SqlCmd.Parameters.AddWithValue("@automatico", _TiposComprobantes.automatico);
+        //		SqlCmd.Parameters.AddWithValue("@idsucursal", _TiposComprobantes.idsucursal);
 
-				SqlCmd.ExecuteNonQuery();
-				//_TiposComprobantes.idtipocomprobante = (System.Int16)pIDTipoComprobante.Value;
-				Base.CerrarConexion(SqlCnn);
-				_state.error = 0;
-				_state.descripcion = "Operacion Realizada";
-				_log.Traceo(_state.descripcion + " Operacion Insertar TiposComprobantes", _state.error.ToString());
-			}
-			catch (SqlException XcpSQL)
-			{
-				foreach (SqlError se in XcpSQL.Errors)
-				{
-					if (se.Number <= 50000)
-					{
-						_state.error = -1;
-						_state.descripcion = se.Message;
-						_log.Error(_state.descripcion, _state.error.ToString());
-					}
-					else
-					{
-						_state.error = -2;
-						_state.descripcion = "Error en Operacion de Insertar de Datos";
-						_log.Error(_state.descripcion, _state.error.ToString());
-					}
-				}
-			}
-			catch (Exception Ex)
-			{
-				_state.error = -3;
-				_state.descripcion = Ex.Message;
-				_log.Error(_state.descripcion, _state.error.ToString());
-			}
-			return _state;
-		}
-		public TiposComprobantes.State ActualizarTiposComprobantes(TiposComprobantes.Data _TiposComprobantes)
+        //		SqlCmd.ExecuteNonQuery();
+        //		_TiposComprobantes.idtipocomprobante = (System.Int32)pIDTipoComprobante.Value;
+        //		Base.CerrarConexion(SqlCnn);
+        //		_state.error = 0;
+        //		_state.descripcion = "Operacion Realizada";
+        //		_log.Traceo(_state.descripcion + " Operacion Insertar TiposComprobantes", _state.error.ToString());
+        //	}
+        //	catch (SqlException XcpSQL)
+        //	{
+        //		foreach (SqlError se in XcpSQL.Errors)
+        //		{
+        //			if (se.Number <= 50000)
+        //			{
+        //				_state.error = -1;
+        //				_state.descripcion = se.Message;
+        //				_log.Error(_state.descripcion, _state.error.ToString());
+        //			}
+        //			else
+        //			{
+        //				_state.error = -2;
+        //				_state.descripcion = "Error en Operacion de Insertar de Datos";
+        //				_log.Error(_state.descripcion, _state.error.ToString());
+        //			}
+        //		}
+        //	}
+        //	catch (Exception Ex)
+        //	{
+        //		_state.error = -3;
+        //		_state.descripcion = Ex.Message;
+        //		_log.Error(_state.descripcion, _state.error.ToString());
+        //	}
+        //	return _state;
+        //}
+
+        public TiposComprobantes InsertarTiposComprobantes(TiposComprobantes.Data _TiposComprobantes)
+        {
+            List<TiposComprobantes.Data> lstTiposComprobantes = new List<TiposComprobantes.Data>();
+            TiposComprobantes.Data _TiposComprobantesObtiene = new TiposComprobantes.Data();
+            try
+            {
+                _log.Traceo("Ingresa a Metodo Insertar TiposComprobantes", "0");
+                SqlConnection SqlCnn;
+                SqlCnn = Base.AbrirConexion();
+                SqlCommand SqlCmd = new SqlCommand("Proc_TiposComprobantes_Insert", SqlCnn);
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+                SqlParameter pIDTipoComprobante = new SqlParameter();
+                pIDTipoComprobante.ParameterName = "@IDTipoComprobante";
+                pIDTipoComprobante.Value = 0;
+                SqlCmd.Parameters.Add(pIDTipoComprobante);
+                pIDTipoComprobante.Direction = System.Data.ParameterDirection.Output;
+                SqlCmd.Parameters.AddWithValue("@descripcion", _TiposComprobantes.descripcion);
+                SqlCmd.Parameters.AddWithValue("@sigla", _TiposComprobantes.sigla);
+                SqlCmd.Parameters.AddWithValue("@automatico", _TiposComprobantes.automatico);
+                SqlCmd.Parameters.AddWithValue("@idsucursal", _TiposComprobantes.idsucursal);
+
+                SqlCmd.ExecuteNonQuery();
+                _TiposComprobantes.idtipocomprobante = (System.Int32)pIDTipoComprobante.Value;
+                Base.CerrarConexion(SqlCnn);
+                lstTiposComprobantes.Add(_TiposComprobantes);
+                _state.error = 0;
+                _state.descripcion = "Operacion Realizada";
+                _log.Traceo(_state.descripcion + " Operacion Insertar TiposComprobantes", _state.error.ToString());
+
+                return new TiposComprobantes(_state, lstTiposComprobantes);
+            }
+            catch (SqlException XcpSQL)
+            {
+                foreach (SqlError se in XcpSQL.Errors)
+                {
+                    if (se.Number <= 50000)
+                    {
+                        _state.error = -1;
+                        _state.descripcion = se.Message;
+                        _log.Error(_state.descripcion, _state.error.ToString());
+                    }
+                    else
+                    {
+                        _state.error = -2;
+                        _state.descripcion = "Error en Operacion de Insertar de Datos";
+                        _log.Error(_state.descripcion, _state.error.ToString());
+                    }
+                }
+            }
+            catch (Exception Ex)
+            {
+                _state.error = -3;
+                _state.descripcion = Ex.Message;
+                _log.Error(_state.descripcion, _state.error.ToString());
+            }
+            return new TiposComprobantes(_state);
+        }
+
+
+
+
+        public TiposComprobantes.State ActualizarTiposComprobantes(TiposComprobantes.Data _TiposComprobantes)
 		{
 			try
 			{
