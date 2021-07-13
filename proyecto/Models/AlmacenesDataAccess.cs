@@ -28,8 +28,8 @@ namespace proyecto.Models
 				while (rdr.Read())
 				{
 					Almacenes.Data _Almacenes= new Almacenes.Data();
-					_Almacenes.codigoalmacen = Convert.ToString(rdr["codigoalmacen"].ToString());
-					_Almacenes.descripcion = !rdr.IsDBNull(1) ? Convert.ToString(rdr["descripcion"].ToString()) : "";
+					_Almacenes.codigoalmacen = Convert.ToString(rdr["codigoalmacen"].ToString().Trim());
+					_Almacenes.descripcion = !rdr.IsDBNull(1) ? Convert.ToString(rdr["descripcion"].ToString().Trim()) : "";
 					_Almacenes.idtipomovimiento = !rdr.IsDBNull(2) ? Convert.ToInt16(rdr["idtipomovimiento"].ToString()) : (System.Int16)0;
 					_Almacenes.idciudad = !rdr.IsDBNull(3) ? Convert.ToInt16(rdr["idciudad"].ToString()) : (System.Int16)0;
 					_Almacenes.Virtual = !rdr.IsDBNull(4) ? Convert.ToBoolean(rdr["virtual"].ToString()) : true;
