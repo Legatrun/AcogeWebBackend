@@ -28,16 +28,16 @@ namespace proyecto.Models
 				while (rdr.Read())
 				{
 					Clientes.Data _Clientes= new Clientes.Data();
-					_Clientes.codigocliente = Convert.ToString(rdr["codigocliente"].ToString());
+					_Clientes.codigocliente = Convert.ToString(rdr["codigocliente"].ToString().Trim());
 					_Clientes.codigoclienteprincipal = !rdr.IsDBNull(1) ? Convert.ToString(rdr["codigoclienteprincipal"].ToString().Trim()) : "";
 					_Clientes.iddocumentoidentidad = !rdr.IsDBNull(2) ? Convert.ToInt16(rdr["iddocumentoidentidad"].ToString()) : (System.Int16)0;
 					_Clientes.numerodocumento = !rdr.IsDBNull(3) ? Convert.ToString(rdr["numerodocumento"].ToString().Trim()) : "";
-					_Clientes.razonsocial = !rdr.IsDBNull(4) ? Convert.ToString(rdr["razonsocial"].ToString()) : "";
+					_Clientes.razonsocial = !rdr.IsDBNull(4) ? Convert.ToString(rdr["razonsocial"].ToString().Trim()) : "";
 					_Clientes.idpais = !rdr.IsDBNull(5) ? Convert.ToInt16(rdr["idpais"].ToString()) : (System.Int16)0;
 					_Clientes.idciudad = !rdr.IsDBNull(6) ? Convert.ToInt16(rdr["idciudad"].ToString()) : (System.Int16)0;
 					_Clientes.idzona = !rdr.IsDBNull(7) ? Convert.ToInt16(rdr["idzona"].ToString()) : (System.Int16)0;
 					_Clientes.idtipocliente = !rdr.IsDBNull(8) ? Convert.ToInt16(rdr["idtipocliente"].ToString()) : (System.Int16)0;
-					_Clientes.descripciondireccion = !rdr.IsDBNull(9) ? Convert.ToString(rdr["descripciondireccion"].ToString()) : "";
+					_Clientes.descripciondireccion = !rdr.IsDBNull(9) ? Convert.ToString(rdr["descripciondireccion"].ToString().Trim()) : "";
 					_Clientes.telefono = !rdr.IsDBNull(10) ? Convert.ToString(rdr["telefono"].ToString().Trim()) : "";
 					_Clientes.correoelectronico = !rdr.IsDBNull(11) ? Convert.ToString(rdr["correoelectronico"].ToString().Trim()) : "";
 					_Clientes.casillacorreo = !rdr.IsDBNull(12) ? Convert.ToString(rdr["casillacorreo"].ToString().Trim()) : "";
@@ -93,23 +93,23 @@ namespace proyecto.Models
 				while (rdr.Read())
 				{
 					Clientes.Data _Clientes= new Clientes.Data();
-					_Clientes.codigocliente = Convert.ToString(rdr["codigocliente"].ToString());
-					_Clientes.codigoclienteprincipal = !rdr.IsDBNull(1) ? Convert.ToString(rdr["codigoclienteprincipal"].ToString()).Trim() : "";
-					_Clientes.iddocumentoidentidad = !rdr.IsDBNull(2) ? Convert.ToInt16(rdr["iddocumentoidentidad"].ToString()) : (System.Int16)0;
-					_Clientes.numerodocumento = !rdr.IsDBNull(3) ? Convert.ToString(rdr["numerodocumento"].ToString()).Trim() : "";
-					_Clientes.razonsocial = !rdr.IsDBNull(4) ? Convert.ToString(rdr["razonsocial"].ToString()) : "";
-					_Clientes.idpais = !rdr.IsDBNull(5) ? Convert.ToInt16(rdr["idpais"].ToString()) : (System.Int16)0;
-					_Clientes.idciudad = !rdr.IsDBNull(6) ? Convert.ToInt16(rdr["idciudad"].ToString()) : (System.Int16)0;
-					_Clientes.idzona = !rdr.IsDBNull(7) ? Convert.ToInt16(rdr["idzona"].ToString()) : (System.Int16)0;
-					_Clientes.idtipocliente = !rdr.IsDBNull(8) ? Convert.ToInt16(rdr["idtipocliente"].ToString()) : (System.Int16)0;
-					_Clientes.descripciondireccion = !rdr.IsDBNull(9) ? Convert.ToString(rdr["descripciondireccion"].ToString()) : "";
-					_Clientes.telefono = !rdr.IsDBNull(10) ? Convert.ToString(rdr["telefono"].ToString()).Trim() : "";
-					_Clientes.correoelectronico = !rdr.IsDBNull(11) ? Convert.ToString(rdr["correoelectronico"].ToString()) : "";
-					_Clientes.casillacorreo = !rdr.IsDBNull(12) ? Convert.ToString(rdr["casillacorreo"].ToString()).Trim() : "";
-					_Clientes.cuentacontable = !rdr.IsDBNull(13) ? Convert.ToString(rdr["cuentacontable"].ToString()).Trim() : "";
-					_Clientes.cuentacontableanticipos = !rdr.IsDBNull(14) ? Convert.ToString(rdr["cuentacontableanticipos"].ToString()).Trim() : "";
-					_Clientes.activo = !rdr.IsDBNull(15) ? Convert.ToBoolean(rdr["activo"].ToString()) : true;
-					lstClientes.Add(_Clientes);
+                    _Clientes.codigocliente = Convert.ToString(rdr["codigocliente"].ToString().Trim());
+                    _Clientes.codigoclienteprincipal = !rdr.IsDBNull(1) ? Convert.ToString(rdr["codigoclienteprincipal"].ToString().Trim()) : "";
+                    _Clientes.iddocumentoidentidad = !rdr.IsDBNull(2) ? Convert.ToInt16(rdr["iddocumentoidentidad"].ToString()) : (System.Int16)0;
+                    _Clientes.numerodocumento = !rdr.IsDBNull(3) ? Convert.ToString(rdr["numerodocumento"].ToString().Trim()) : "";
+                    _Clientes.razonsocial = !rdr.IsDBNull(4) ? Convert.ToString(rdr["razonsocial"].ToString().Trim()) : "";
+                    _Clientes.idpais = !rdr.IsDBNull(5) ? Convert.ToInt16(rdr["idpais"].ToString()) : (System.Int16)0;
+                    _Clientes.idciudad = !rdr.IsDBNull(6) ? Convert.ToInt16(rdr["idciudad"].ToString()) : (System.Int16)0;
+                    _Clientes.idzona = !rdr.IsDBNull(7) ? Convert.ToInt16(rdr["idzona"].ToString()) : (System.Int16)0;
+                    _Clientes.idtipocliente = !rdr.IsDBNull(8) ? Convert.ToInt16(rdr["idtipocliente"].ToString()) : (System.Int16)0;
+                    _Clientes.descripciondireccion = !rdr.IsDBNull(9) ? Convert.ToString(rdr["descripciondireccion"].ToString().Trim()) : "";
+                    _Clientes.telefono = !rdr.IsDBNull(10) ? Convert.ToString(rdr["telefono"].ToString().Trim()) : "";
+                    _Clientes.correoelectronico = !rdr.IsDBNull(11) ? Convert.ToString(rdr["correoelectronico"].ToString().Trim()) : "";
+                    _Clientes.casillacorreo = !rdr.IsDBNull(12) ? Convert.ToString(rdr["casillacorreo"].ToString().Trim()) : "";
+                    _Clientes.cuentacontable = !rdr.IsDBNull(13) ? Convert.ToString(rdr["cuentacontable"].ToString().Trim()) : "";
+                    _Clientes.cuentacontableanticipos = !rdr.IsDBNull(14) ? Convert.ToString(rdr["cuentacontableanticipos"].ToString().Trim()) : "";
+                    _Clientes.activo = !rdr.IsDBNull(12) ? Convert.ToBoolean(rdr["activo"].ToString()) : true;
+                    lstClientes.Add(_Clientes);
 				}
 				Base.CerrarConexion(SqlCnn);
 				_state.error = 0;
