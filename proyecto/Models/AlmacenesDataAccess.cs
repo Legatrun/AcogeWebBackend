@@ -32,7 +32,7 @@ namespace proyecto.Models
 					_Almacenes.descripcion = !rdr.IsDBNull(1) ? Convert.ToString(rdr["descripcion"].ToString().Trim()) : "";
 					_Almacenes.idtipomovimiento = !rdr.IsDBNull(2) ? Convert.ToInt16(rdr["idtipomovimiento"].ToString()) : (System.Int16)0;
 					_Almacenes.idciudad = !rdr.IsDBNull(3) ? Convert.ToInt16(rdr["idciudad"].ToString()) : (System.Int16)0;
-					_Almacenes.Virtual = !rdr.IsDBNull(4) ? Convert.ToBoolean(rdr["virtual"].ToString()) : true;
+					_Almacenes.Virtual = !rdr.IsDBNull(4) ? Convert.ToBoolean(rdr["virtual"].ToString()) : false;
 					lstAlmacenes.Add(_Almacenes);
 				}
 				Base.CerrarConexion(SqlCnn);
