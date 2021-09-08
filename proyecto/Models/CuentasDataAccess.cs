@@ -28,12 +28,12 @@ namespace proyecto.Models
 				while (rdr.Read())
 				{
 					Cuentas.Data _Cuentas= new Cuentas.Data();
-					_Cuentas.cuenta = Convert.ToString(rdr["cuenta"].ToString());
-					_Cuentas.nombrecuenta = !rdr.IsDBNull(1) ? Convert.ToString(rdr["nombrecuenta"].ToString()) : "";
+					_Cuentas.cuenta = Convert.ToString(rdr["cuenta"].ToString().Trim());
+					_Cuentas.nombrecuenta = !rdr.IsDBNull(1) ? Convert.ToString(rdr["nombrecuenta"].ToString().Trim()) : "";
 					_Cuentas.idmoneda = !rdr.IsDBNull(2) ? Convert.ToInt16(rdr["idmoneda"].ToString()) : (System.Int16)0;
 					_Cuentas.nivel = !rdr.IsDBNull(3) ? Convert.ToInt16(rdr["nivel"].ToString()) : (System.Int16)0;
 					_Cuentas.cuentaasiento = !rdr.IsDBNull(4) ? Convert.ToBoolean(rdr["cuentaasiento"].ToString()) : true;
-					_Cuentas.cuentasumar = !rdr.IsDBNull(5) ? Convert.ToString(rdr["cuentasumar"].ToString()) : "";
+					_Cuentas.cuentasumar = !rdr.IsDBNull(5) ? Convert.ToString(rdr["cuentasumar"].ToString().Trim()) : "";
 					_Cuentas.activopasivo = !rdr.IsDBNull(6) ? Convert.ToInt32(rdr["activopasivo"].ToString()) : (System.Int32)0;
 					lstCuentas.Add(_Cuentas);
 				}
