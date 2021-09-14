@@ -81,8 +81,6 @@ namespace proyecto.Models
 
                 if (objUsuarioVerificado._error.error != 0)
                 {
-                    //_state.error = objUsuarioVerificado._error.error;
-                    //_state.descripcion = objUsuarioVerificado._error.descripcion;
                     _log.Error(objUsuarioVerificado._error.descripcion, objUsuarioVerificado._error.error.ToString());
                     return objUsuarioVerificado;
                 }
@@ -107,7 +105,7 @@ namespace proyecto.Models
                 else
                 {
                     _state.error = -4;
-                    _state.descripcion = "Usuario Inexistente";
+                    _state.descripcion = "El Usuario y/o Password son erroneos!";
                     _log.Error(_state.descripcion, _state.error.ToString());
                 }
                 return objUsuarioVerificado;
