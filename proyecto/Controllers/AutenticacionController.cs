@@ -23,7 +23,7 @@ namespace proyecto.Controllers
 
         [HttpPost]
         [Route("LoginAD")]
-        public Autenticacion.State LoginAD([FromBody] Autenticacion.Data data)
+        public Autenticacion LoginAD([FromBody] Autenticacion.Data data)
         {
             return objAutenticacion.LoginAD(data);
         }

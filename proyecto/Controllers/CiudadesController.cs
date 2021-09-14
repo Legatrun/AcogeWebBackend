@@ -20,7 +20,13 @@ namespace proyecto.Controllers
 		{
 			return objCiudades.ConsultarCiudades();
 		}
-       [HttpPost]
+		[HttpPost]
+		[Route("ConsultarFilter")]
+		public Ciudades ConsultarFilter([FromBody] Ciudades.Data data)
+		{
+			return objCiudades.ConsultarCiudadesFilter(data);
+		}
+		[HttpPost]
        [Route("Buscar")]
 		public Ciudades Buscar([FromBody] Ciudades.Data data)
 		{

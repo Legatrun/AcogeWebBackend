@@ -29,8 +29,8 @@ namespace proyecto.Models
 				{
 					TipoDocumentosIdentidad.Data _TipoDocumentosIdentidad= new TipoDocumentosIdentidad.Data();
 					_TipoDocumentosIdentidad.iddocumentoidentidad = Convert.ToInt16(rdr["iddocumentoidentidad"].ToString());
-					_TipoDocumentosIdentidad.descripcion = !rdr.IsDBNull(1) ? Convert.ToString(rdr["descripcion"].ToString()) : "";
-					_TipoDocumentosIdentidad.sigla = !rdr.IsDBNull(2) ? Convert.ToString(rdr["sigla"].ToString()) : "";
+					_TipoDocumentosIdentidad.descripcion = !rdr.IsDBNull(1) ? Convert.ToString(rdr["descripcion"].ToString().Trim()) : "";
+					_TipoDocumentosIdentidad.sigla = !rdr.IsDBNull(2) ? Convert.ToString(rdr["sigla"].ToString().Trim()) : "";
 					lstTipoDocumentosIdentidad.Add(_TipoDocumentosIdentidad);
 				}
 				Base.CerrarConexion(SqlCnn);

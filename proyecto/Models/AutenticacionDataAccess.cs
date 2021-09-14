@@ -71,20 +71,20 @@ namespace proyecto.Models
             return new Autenticacion(_state);
         }
 
-        public Autenticacion.State LoginAD(Autenticacion.Data data)
+        public Autenticacion LoginAD(Autenticacion.Data data)
         {
             List<Autenticacion.Data> lstAutenticacion = new List<Autenticacion.Data>();
+            Autenticacion objUsuarioVerificado = VerificarUsuario(data);
             try
             {
                 _log.Traceo("Inicia Sesión de Usuario " + _crypto.DesencriptarValorFront(data.Usuario), "0");
 
-                Autenticacion objUsuarioVerificado = VerificarUsuario(data);
                 if (objUsuarioVerificado._error.error != 0)
                 {
-                    _state.error = objUsuarioVerificado._error.error;
-                    _state.descripcion = objUsuarioVerificado._error.descripcion;
+                    //_state.error = objUsuarioVerificado._error.error;
+                    //_state.descripcion = objUsuarioVerificado._error.descripcion;
                     _log.Error(objUsuarioVerificado._error.descripcion, objUsuarioVerificado._error.error.ToString());
-                    return _state;
+                    return objUsuarioVerificado;
                 }
 
                 data.Dominio = _params.ActiveDirectoryServidor;
@@ -110,7 +110,7 @@ namespace proyecto.Models
                     _state.descripcion = "Usuario Inexistente";
                     _log.Error(_state.descripcion, _state.error.ToString());
                 }
-                return _state;
+                return objUsuarioVerificado;
             }
             catch (SqlException XcpSQL)
             {
@@ -136,7 +136,7 @@ namespace proyecto.Models
                 _state.descripcion = Ex.Message;
                 _log.Error(_state.descripcion, _state.error.ToString());
             }
-            return _state;
+            return objUsuarioVerificado;
         }
 
         public Autenticacion.State Logout(Autenticacion.Data data)
