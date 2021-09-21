@@ -34,8 +34,8 @@ namespace proyecto.Models
 					_Sucursales.nombre = Convert.ToString(rdr["nombre"].ToString()).Trim();
 					_Sucursales.direccion = Convert.ToString(rdr["direccion"].ToString()).Trim();
 					_Sucursales.numero = !rdr.IsDBNull(5) ? Convert.ToInt32(rdr["numero"].ToString()) : (System.Int32)0;
-					_Sucursales.telefonos = !rdr.IsDBNull(6) ? Convert.ToString(rdr["telefonos"].ToString()) : "";
-					_Sucursales.email = !rdr.IsDBNull(7) ? Convert.ToString(rdr["email"].ToString()) : "";
+					_Sucursales.telefonos = !rdr.IsDBNull(6) ? Convert.ToString(rdr["telefonos"].ToString()).Trim() : "";
+					_Sucursales.email = !rdr.IsDBNull(7) ? Convert.ToString(rdr["email"].ToString()).Trim() : "";
 					_Sucursales.codigopostal = !rdr.IsDBNull(8) ? Convert.ToString(rdr["codigopostal"].ToString()).Trim() : "";
 					lstSucursales.Add(_Sucursales);
 				}
@@ -92,8 +92,8 @@ namespace proyecto.Models
 					_Sucursales.nombre = Convert.ToString(rdr["nombre"].ToString());
 					_Sucursales.direccion = Convert.ToString(rdr["direccion"].ToString());
 					_Sucursales.numero = !rdr.IsDBNull(5) ? Convert.ToInt32(rdr["numero"].ToString()) : (System.Int32)0;
-					_Sucursales.telefonos = !rdr.IsDBNull(6) ? Convert.ToString(rdr["telefonos"].ToString()) : "";
-					_Sucursales.email = !rdr.IsDBNull(7) ? Convert.ToString(rdr["email"].ToString()) : "";
+					_Sucursales.telefonos = !rdr.IsDBNull(6) ? Convert.ToString(rdr["telefonos"].ToString()).Trim() : "";
+					_Sucursales.email = !rdr.IsDBNull(7) ? Convert.ToString(rdr["email"].ToString()).Trim() : "";
 					_Sucursales.codigopostal = !rdr.IsDBNull(8) ? Convert.ToString(rdr["codigopostal"].ToString()) : "";
 					lstSucursales.Add(_Sucursales);
 				}

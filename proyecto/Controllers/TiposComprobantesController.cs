@@ -33,7 +33,7 @@ namespace proyecto.Controllers
         //{
         //	return objTiposComprobantes.InsertarTiposComprobantes(data);
         //}
-        public TiposComprobantes Insertar([FromBody] TiposComprobantes.Data data)
+        public TiposComprobantes.State Insertar([FromBody] TiposComprobantes.Data data)
         {
             return objTiposComprobantes.InsertarTiposComprobantes(data);
         }

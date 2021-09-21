@@ -86,13 +86,13 @@ namespace proyecto.Models
 				{
 					ClaseItems.Data _ClaseItems= new ClaseItems.Data();
 					_ClaseItems.idclase = Convert.ToInt16(rdr["idclase"].ToString());
-					_ClaseItems.descripcion = !rdr.IsDBNull(1) ? Convert.ToString(rdr["descripcion"].ToString()) : "";
-					_ClaseItems.sigla = !rdr.IsDBNull(2) ? Convert.ToString(rdr["sigla"].ToString()) : "";
-					_ClaseItems.cuentaventa = !rdr.IsDBNull(3) ? Convert.ToString(rdr["cuentaventa"].ToString()) : "";
-					_ClaseItems.cuentacosto = !rdr.IsDBNull(4) ? Convert.ToString(rdr["cuentacosto"].ToString()) : "";
-					_ClaseItems.cuentagasto = !rdr.IsDBNull(5) ? Convert.ToString(rdr["cuentagasto"].ToString()) : "";
-					_ClaseItems.cuentainventario = !rdr.IsDBNull(6) ? Convert.ToString(rdr["cuentainventario"].ToString()) : "";
-					_ClaseItems.ingresainventario = !rdr.IsDBNull(8) ? Convert.ToBoolean(rdr["ingresainventario"].ToString()) : true;
+					_ClaseItems.descripcion = !rdr.IsDBNull(rdr.GetOrdinal("descripcion")) ? Convert.ToString(rdr["descripcion"].ToString()) : "";
+					_ClaseItems.sigla = !rdr.IsDBNull(rdr.GetOrdinal("sigla")) ? Convert.ToString(rdr["sigla"].ToString()).Trim() : "";
+					_ClaseItems.cuentaventa = !rdr.IsDBNull(rdr.GetOrdinal("cuentaventa")) ? Convert.ToString(rdr["cuentaventa"].ToString()) : "";
+					_ClaseItems.cuentacosto = !rdr.IsDBNull(rdr.GetOrdinal("cuentacosto")) ? Convert.ToString(rdr["cuentacosto"].ToString()) : "";
+					_ClaseItems.cuentagasto = !rdr.IsDBNull(rdr.GetOrdinal("cuentagasto")) ? Convert.ToString(rdr["cuentagasto"].ToString()) : "";
+					_ClaseItems.cuentainventario = !rdr.IsDBNull(rdr.GetOrdinal("cuentainventario")) ? Convert.ToString(rdr["cuentainventario"].ToString()) : "";
+					_ClaseItems.ingresainventario = !rdr.IsDBNull(rdr.GetOrdinal("ingresainventario")) ? Convert.ToBoolean(rdr["ingresainventario"].ToString()) : true;
 					lstClaseItems.Add(_ClaseItems);
 				}
 				Base.CerrarConexion(SqlCnn);

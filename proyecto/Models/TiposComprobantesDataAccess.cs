@@ -174,7 +174,7 @@ namespace proyecto.Models
         //	return _state;
         //}
 
-        public TiposComprobantes InsertarTiposComprobantes(TiposComprobantes.Data _TiposComprobantes)
+        public TiposComprobantes.State InsertarTiposComprobantes(TiposComprobantes.Data _TiposComprobantes)
         {
             List<TiposComprobantes.Data> lstTiposComprobantes = new List<TiposComprobantes.Data>();
             TiposComprobantes.Data _TiposComprobantesObtiene = new TiposComprobantes.Data();
@@ -203,7 +203,7 @@ namespace proyecto.Models
                 _state.descripcion = "Operacion Realizada";
                 _log.Traceo(_state.descripcion + " Operacion Insertar TiposComprobantes", _state.error.ToString());
 
-                return new TiposComprobantes(_state, lstTiposComprobantes);
+                //return new TiposComprobantes(_state, lstTiposComprobantes);
             }
             catch (SqlException XcpSQL)
             {
@@ -229,13 +229,11 @@ namespace proyecto.Models
                 _state.descripcion = Ex.Message;
                 _log.Error(_state.descripcion, _state.error.ToString());
             }
-            return new TiposComprobantes(_state);
+            //return new TiposComprobantes(_state);
+            return _state;
         }
 
-
-
-
-        public TiposComprobantes.State ActualizarTiposComprobantes(TiposComprobantes.Data _TiposComprobantes)
+		public TiposComprobantes.State ActualizarTiposComprobantes(TiposComprobantes.Data _TiposComprobantes)
 		{
 			try
 			{

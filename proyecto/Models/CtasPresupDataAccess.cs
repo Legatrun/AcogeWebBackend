@@ -87,14 +87,14 @@ namespace proyecto.Models
 				{
 					CtasPresup.Data _CtasPresup= new CtasPresup.Data();
 					_CtasPresup.cuentapresup = Convert.ToString(rdr["cuentapresup"].ToString());
-					_CtasPresup.nombrecuentapresup = !rdr.IsDBNull(1) ? Convert.ToString(rdr["nombrecuentapresup"].ToString()) : "";
-					_CtasPresup.idmoneda = !rdr.IsDBNull(2) ? Convert.ToInt16(rdr["idmoneda"].ToString()) : (System.Int16)0;
-					_CtasPresup.nivel = !rdr.IsDBNull(3) ? Convert.ToInt32(rdr["nivel"].ToString()) : (System.Int32)0;
-					_CtasPresup.fechacreacion = !rdr.IsDBNull(4) ? Convert.ToDateTime(rdr["fechacreacion"].ToString()) : System.DateTime.Now;
-					_CtasPresup.fechamodificacion = !rdr.IsDBNull(5) ? Convert.ToDateTime(rdr["fechamodificacion"].ToString()) : System.DateTime.Now;
-					_CtasPresup.balancecuenta = !rdr.IsDBNull(6) ? Convert.ToBoolean(rdr["balancecuenta"].ToString()) : true;
-					_CtasPresup.cuentaasiento = !rdr.IsDBNull(7) ? Convert.ToBoolean(rdr["cuentaasiento"].ToString()) : true;
-					_CtasPresup.grabado = !rdr.IsDBNull(8) ? Convert.ToBoolean(rdr["grabado"].ToString()) : true;
+					_CtasPresup.nombrecuentapresup = !rdr.IsDBNull(rdr.GetOrdinal("nombrecuentapresup")) ? Convert.ToString(rdr["nombrecuentapresup"].ToString()) : "";
+					_CtasPresup.idmoneda = !rdr.IsDBNull(rdr.GetOrdinal("idmoneda")) ? Convert.ToInt16(rdr["idmoneda"].ToString()) : (System.Int16)0;
+					_CtasPresup.nivel = !rdr.IsDBNull(rdr.GetOrdinal("nivel")) ? Convert.ToInt32(rdr["nivel"].ToString()) : (System.Int32)0;
+					_CtasPresup.fechacreacion = !rdr.IsDBNull(rdr.GetOrdinal("fechacreacion")) ? Convert.ToDateTime(rdr["fechacreacion"].ToString()) : System.DateTime.Now;
+					_CtasPresup.fechamodificacion = !rdr.IsDBNull(rdr.GetOrdinal("fechamodificacion")) ? Convert.ToDateTime(rdr["fechamodificacion"].ToString()) : System.DateTime.Now;
+					_CtasPresup.balancecuenta = !rdr.IsDBNull(rdr.GetOrdinal("balancecuenta")) ? Convert.ToBoolean(rdr["balancecuenta"].ToString()) : true;
+					_CtasPresup.cuentaasiento = !rdr.IsDBNull(rdr.GetOrdinal("cuentaasiento")) ? Convert.ToBoolean(rdr["cuentaasiento"].ToString()) : true;
+					_CtasPresup.grabado = !rdr.IsDBNull(rdr.GetOrdinal("grabado")) ? Convert.ToBoolean(rdr["grabado"].ToString()) : true;
 					lstCtasPresup.Add(_CtasPresup);
 				}
 				Base.CerrarConexion(SqlCnn);
